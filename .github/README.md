@@ -1,36 +1,36 @@
-<h1 align="center"><b>❤️ AASTHA MUSIC BOT ❤️</b></h1>
+<h1 align="center"><b>❤️ DR VICTOR MUSIC BOT ❤️</b></h1>
 
-<h4 align="center">Aastha Music Is A Part Of Alexa Bot Which Is A Powerful, Smart And Simple Bot To Play Audio And Video Song In Telegram<br> ...All Credit Goes To Team Yukki...</h4>
+<h4 align="center">DR VICTOR Music Is A Part Of Alexa Bot Which Is A Powerful, Smart And Simple Bot To Play Audio And Video Song In Telegram<br> ...All Credit Goes To Team Yukki...</h4>
 
-<p align="center"><a href="https://t.me/Dr_Asad_Ali"><img src="https://telegra.ph/file/d8db78924684b505c3048.jpg" width="400"></a></p>
+<p align="center"><a href="https://t.me/Hitler_fed_owner"><img src="https://telegra.ph/file/169a05691d278557e26ba.png" width="400"></a></p>
 
 <p align="center">
-    <a href="https://app.codacy.com/manual/jankarikiduniya/AasthaMusicBot/dashboard"> <img src="https://img.shields.io/codacy/grade/4d58f2a402b54aed8a7d95f7add45a81?color=brightgreen&logo=codacy&logoColor=green&style=for-the-badge" alt="Codacy" /></a>
-    <a href="https://github.com/jankarikiduniya/AasthaMusicBot"> <img src="https://img.shields.io/github/repo-size/jankarikiduniya/AasthaMusicBot?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/jankarikiduniya/AasthaMusicBot/commits/prince"> <img src="https://img.shields.io/github/last-commit/jankarikiduniya/AasthaMusicBot?color=brown&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/jankarikiduniya/AasthaMusicBot/issues"> <img src="https://img.shields.io/github/issues/jankarikiduniya/AasthaMusicBot?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
-    <a href="https://github.com/jankarikiduniya/AasthaMusicBot/network/members"> <img src="https://img.shields.io/github/forks/jankarikiduniya/AasthaMusicBot?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
+    <a href="https://app.codacy.com/manual/Adarshtiwari1305/oommffoooo/dashboard"> <img src="https://img.shields.io/codacy/grade/4d58f2a402b54aed8a7d95f7add45a81?color=brightgreen&logo=codacy&logoColor=green&style=for-the-badge" alt="Codacy" /></a>
+    <a href="https://github.com/Adarshtiwari1305/oommffoooo"> <img src="https://img.shields.io/github/repo-size/Adarshtiwari1305/oommffoooo?color=orange&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/Adarshtiwari1305/oommffoooo/commits/prince"> <img src="https://img.shields.io/github/last-commit/Adarshtiwari1305/oommffoooo?color=brown&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/Adarshtiwari1305/oommffoooo/issues"> <img src="https://img.shields.io/github/issues/Adarshtiwari1305/oommffoooo?color=blueviolet&logo=github&logoColor=green&style=for-the-badge" /></a>
+    <a href="https://github.com/Adarshtiwari1305/oommffoooo/network/members"> <img src="https://img.shields.io/github/forks/Adarshtiwari1305/oommffoooo?color=red&logo=github&logoColor=green&style=for-the-badge" /></a>  
     <a href="https://pypi.org/project/Telethon/"> <img src="https://img.shields.io/pypi/v/telethon?color=yellow&label=telethon&logo=python&logoColor=green&style=for-the-badge" /></a>
 </p>
 
 > ⭐️ Thanks to everyone for using Alexa Server, That is the greatest pleasure we have !
 
-### Asad– History This Bot Is Clone On [Team Yukki](https://github.com/TeamYukki)
+### Adarsh (Victor) – History This Bot Is Clone On [Team Yukki](https://github.com/TeamYukki)
 
-<a href="https://www.youtube.com/JankariKiDuniya"><img src="https://img.shields.io/badge/Join-Subscribe%20Support-blue.svg?style=for-the-badge&logo=YouTube"></a>
+<a href="https://www.youtube.com/Adarshtiwari1305"><img src="https://img.shields.io/badge/Join-Subscribe%20Support-blue.svg?style=for-the-badge&logo=YouTube"></a>
 
 ## Features ❤️”®
 
-- Gban Added By [Me](https://t.me/Alexa_Help)
+- Gban Added By [Me](https://t.me/Hitler_fed)
 - Automatically Thambnail Generator By [Team Yukki](https://github.com/TeamYukki)
-- Customize Button Added [Me](https://t.me/Alexa_Help)
+- Customize Button Added [Me](https://t.me/Hitler_fed)
 - Channel Stream Added 
 
 # ᴅᴇᴘʟᴏʏᴍᴇɴᴛ
 
 
 <details>
-<summary><b>ʀᴇǫᴜɪʀᴇᴍᴇɴᴛs</b></summary>
+<summary><b>ʀᴇǫᴜɪʀᴇᴍᴇɴs</b></summary>
 <br>
     
 - [ᴘʏᴛʜᴏɴ𝟹.𝟿](https://www.python.org/downloads/release/python-390/)
@@ -79,9 +79,9 @@
 
 ## sᴘᴇᴄɪᴀʟ ᴄʀᴇᴅɪᴛ
 
-- [ᴀsᴀᴅ ᴀʟɪ](https://t.me/Dr_Asad_Ali)
-- [ʜᴀʀsʜɪᴛ](https://t.me/HarshitSharma361)
-- [Abhimanyu](https://t.me/Itz_Venom_xD)
+- [🅐Ⓓ🅐Ⓡ🅢Ⓗ✨🅣Ⓘ🅦Ⓐ🅡Ⓘ](https://t.me/Hitler_fed_owner)
+
+
 - [ʏᴜᴋᴋɪ](https://github.com/NotReallyShikhar)
 
 </details>
@@ -100,10 +100,10 @@
 <br>
 
 # ❤️ Support
-<a href="https://t.me/AsadSupport"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
-<a href="https://t.me/Shayri_Music_Lovers"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
-<a href="https://t.me/Give_Me_Heart"><img src="https://img.shields.io/badge/Give-Me%20Heart-blue.svg?logo=telegram"></a>
-<a href="https://t.me/Alexa_Help"><img src="https://img.shields.io/badge/Give-Me%20Heart-blue.svg?logo=telegram"></a>
+<a href="https://t.me/Shrutikidiary"><img src="https://img.shields.io/badge/Join-Telegram%20Channel-red.svg?logo=Telegram"></a>
+<a href="https://t.me/Hitler_fed"><img src="https://img.shields.io/badge/Join-Telegram%20Group-blue.svg?logo=telegram"></a>
+
+
 
 </details>
 
