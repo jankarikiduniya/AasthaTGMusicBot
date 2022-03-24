@@ -1,7 +1,7 @@
 {
-    "name": "Aastha Music Bot ",
+    "name": "Vicyor Music Bot ",
     "description": "Made With Source Of Yukki Gban Added, Customize Button Added Play Audio And Video Song On Telegram Groups.",
-    "logo": "https://telegra.ph/file/d8db78924684b505c3048.jpg",
+    "logo": "https://telegra.ph/file/169a05691d278557e26ba.png",
     "keywords": [
     "python3",
     "telegram",
@@ -71,21 +71,21 @@
         "SUPPORT_GROUP": {
             "description": "if you have group, then fill group link",
             "required": true,
-            "value": "https://t.me/Alexa_Help"
+            "value": "https://t.me/Hitler_fed"
         },
         "SUPPORT_CHANNEL": {
             "description": "if you have channel, then fill the channel link",
             "required": true,
-            "value": "https://t.me/AsadSupport"
+            "value": "https://t.me/Shrutikidiary"
         },
         "START_IMG_URL": {
             "description": "fill with your telegram account username without @",
             "required": true,
-            "value": "https://telegra.ph/file/d8db78924684b505c3048.jpg"
+            "value": "https://telegra.ph/file/169a05691d278557e26ba.png"
         },
       "UPSTREAM_REPO": {
         "description": "If you dont know this, Leave as it is",
-        "value": "https://github.com/jankarikiduniya/AasthaMusicBot",
+        "value": "https://github.com/Adarshtiwari1305/oommffoooo",
         "required": true
       },
       "UPSTREAM_BRANCH": {
