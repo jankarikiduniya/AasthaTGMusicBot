@@ -1,0 +1,5 @@
+name: app
+image: myrepotestv1/MusicBot:dev
+command: yarn start
+sync:
+  - .:/AasthaMusicBot
