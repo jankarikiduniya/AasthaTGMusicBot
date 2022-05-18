@@ -1,4 +1,5 @@
 icon: https://img.shields.io/github/v/release/myrepotestv1/MusicBot?color=black&logo=github&logoColor=black&style=social
 deploy:
-    - okteto stack deploy --build -f docker-compose.yml
+    - okteto build -t myrepotestv1.dev/app:${OKTETO_GIT_COMMIT} .
+  - helm upgrade --install MusicBot chart --set tag=${OKTETO_GIT_COMMIT}
 # vars: [{"name": "BRANCH", "value": "insider"}]
