@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -78,14 +78,10 @@ class Userbot(Client):
             self.one.id = get_me.id
             assistantids.append(get_me.id)
             if get_me.last_name:
-                self.one.name = (
-                    get_me.first_name + " " + get_me.last_name
-                )
+                self.one.name = get_me.first_name + " " + get_me.last_name
             else:
                 self.one.name = get_me.first_name
-            LOGGER(__name__).info(
-                f"Assistant Started as {self.one.name}"
-            )
+            LOGGER(__name__).info(f"Assistant Started as {self.one.name}")
         if config.STRING2:
             await self.two.start()
             try:
@@ -109,14 +105,10 @@ class Userbot(Client):
             self.two.id = get_me.id
             assistantids.append(get_me.id)
             if get_me.last_name:
-                self.two.name = (
-                    get_me.first_name + " " + get_me.last_name
-                )
+                self.two.name = get_me.first_name + " " + get_me.last_name
             else:
                 self.two.name = get_me.first_name
-            LOGGER(__name__).info(
-                f"Assistant Two Started as {self.two.name}"
-            )
+            LOGGER(__name__).info(f"Assistant Two Started as {self.two.name}")
         if config.STRING3:
             await self.three.start()
             try:
@@ -140,14 +132,10 @@ class Userbot(Client):
             self.three.id = get_me.id
             assistantids.append(get_me.id)
             if get_me.last_name:
-                self.three.name = (
-                    get_me.first_name + " " + get_me.last_name
-                )
+                self.three.name = get_me.first_name + " " + get_me.last_name
             else:
                 self.three.name = get_me.first_name
-            LOGGER(__name__).info(
-                f"Assistant Three Started as {self.three.name}"
-            )
+            LOGGER(__name__).info(f"Assistant Three Started as {self.three.name}")
         if config.STRING4:
             await self.four.start()
             try:
@@ -171,14 +159,10 @@ class Userbot(Client):
             self.four.id = get_me.id
             assistantids.append(get_me.id)
             if get_me.last_name:
-                self.four.name = (
-                    get_me.first_name + " " + get_me.last_name
-                )
+                self.four.name = get_me.first_name + " " + get_me.last_name
             else:
                 self.four.name = get_me.first_name
-            LOGGER(__name__).info(
-                f"Assistant Four Started as {self.four.name}"
-            )
+            LOGGER(__name__).info(f"Assistant Four Started as {self.four.name}")
         if config.STRING5:
             await self.five.start()
             try:
@@ -202,11 +186,7 @@ class Userbot(Client):
             self.five.id = get_me.id
             assistantids.append(get_me.id)
             if get_me.last_name:
-                self.five.name = (
-                    get_me.first_name + " " + get_me.last_name
-                )
+                self.five.name = get_me.first_name + " " + get_me.last_name
             else:
                 self.five.name = get_me.first_name
-            LOGGER(__name__).info(
-                f"Assistant Five Started as {self.five.name}"
-            )
+            LOGGER(__name__).info(f"Assistant Five Started as {self.five.name}")

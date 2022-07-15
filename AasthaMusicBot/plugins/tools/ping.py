@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -23,9 +23,7 @@ from AasthaMusicBot.utils.decorators.language import language
 PING_COMMAND = get_command("PING_COMMAND")
 
 
-@app.on_message(
-    filters.command(PING_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(PING_COMMAND) & filters.group & ~BANNED_USERS)
 @language
 async def ping_com(client, message: Message, _):
     start = datetime.now()

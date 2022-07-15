@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -16,19 +16,13 @@ from AasthaMusicBot import app
 
 
 def help_pannel(_, START: Union[bool, int] = None):
-    first = [
-        InlineKeyboardButton(
-            text=_["CLOSEMENU_BUTTON"], callback_data=f"close"
-        )
-    ]
+    first = [InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data=f"close")]
     second = [
         InlineKeyboardButton(
             text=_["BACK_BUTTON"],
             callback_data=f"settingsback_helper",
         ),
-        InlineKeyboardButton(
-            text=_["CLOSEMENU_BUTTON"], callback_data=f"close"
-        ),
+        InlineKeyboardButton(text=_["CLOSEMENU_BUTTON"], callback_data=f"close"),
     ]
     mark = second if START else first
     upl = InlineKeyboardMarkup(
@@ -67,9 +61,7 @@ def help_back_markup(_):
                     text=_["BACK_BUTTON"],
                     callback_data=f"settings_back_helper",
                 ),
-                InlineKeyboardButton(
-                    text=_["CLOSE_BUTTON"], callback_data=f"close"
-                ),
+                InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"close"),
             ]
         ]
     )

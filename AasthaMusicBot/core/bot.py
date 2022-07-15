@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -43,9 +43,7 @@ class AlexaBot(Client):
             sys.exit()
         a = await self.get_chat_member(config.LOG_GROUP_ID, self.id)
         if a.status != "administrator":
-            LOGGER(__name__).error(
-                "Please promote Bot as Admin in Logger Group"
-            )
+            LOGGER(__name__).error("Please promote Bot as Admin in Logger Group")
             sys.exit()
         if get_me.last_name:
             self.name = get_me.first_name + " " + get_me.last_name

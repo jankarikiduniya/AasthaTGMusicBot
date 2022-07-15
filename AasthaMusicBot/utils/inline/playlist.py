@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -18,17 +18,11 @@ def botplaylist_markup(_):
                 text=_["PL_B_1"],
                 callback_data="get_playlist_playmode",
             ),
-            InlineKeyboardButton(
-                text=_["PL_B_8"], callback_data="get_top_playlists"
-            ),
+            InlineKeyboardButton(text=_["PL_B_8"], callback_data="get_top_playlists"),
         ],
         [
-            InlineKeyboardButton(
-                text=_["PL_B_4"], callback_data="PM"
-            ),
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"], callback_data="close"
-            ),
+            InlineKeyboardButton(text=_["PL_B_4"], callback_data="PM"),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
     ]
     return buttons
@@ -36,28 +30,12 @@ def botplaylist_markup(_):
 
 def top_play_markup(_):
     buttons = [
+        [InlineKeyboardButton(text=_["PL_B_9"], callback_data="SERVERTOP global")],
+        [InlineKeyboardButton(text=_["PL_B_10"], callback_data="SERVERTOP chat")],
+        [InlineKeyboardButton(text=_["PL_B_11"], callback_data="SERVERTOP user")],
         [
-            InlineKeyboardButton(
-                text=_["PL_B_9"], callback_data="SERVERTOP global"
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text=_["PL_B_10"], callback_data="SERVERTOP chat"
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text=_["PL_B_11"], callback_data="SERVERTOP user"
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text=_["BACK_BUTTON"], callback_data="get_playmarkup"
-            ),
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"], callback_data="close"
-            ),
+            InlineKeyboardButton(text=_["BACK_BUTTON"], callback_data="get_playmarkup"),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
     ]
     return buttons
@@ -66,20 +44,12 @@ def top_play_markup(_):
 def get_playlist_markup(_):
     buttons = [
         [
-            InlineKeyboardButton(
-                text=_["P_B_1"], callback_data="play_playlist a"
-            ),
-            InlineKeyboardButton(
-                text=_["P_B_2"], callback_data="play_playlist b"
-            ),
+            InlineKeyboardButton(text=_["P_B_1"], callback_data="play_playlist a"),
+            InlineKeyboardButton(text=_["P_B_2"], callback_data="play_playlist b"),
         ],
         [
-            InlineKeyboardButton(
-                text=_["BACK_BUTTON"], callback_data="home_play"
-            ),
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"], callback_data="close"
-            ),
+            InlineKeyboardButton(text=_["BACK_BUTTON"], callback_data="home_play"),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
     ]
     return buttons
@@ -87,28 +57,12 @@ def get_playlist_markup(_):
 
 def top_play_markup(_):
     buttons = [
+        [InlineKeyboardButton(text=_["PL_B_9"], callback_data="SERVERTOP Global")],
+        [InlineKeyboardButton(text=_["PL_B_10"], callback_data="SERVERTOP Group")],
+        [InlineKeyboardButton(text=_["PL_B_11"], callback_data="SERVERTOP Personal")],
         [
-            InlineKeyboardButton(
-                text=_["PL_B_9"], callback_data="SERVERTOP Global"
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text=_["PL_B_10"], callback_data="SERVERTOP Group"
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text=_["PL_B_11"], callback_data="SERVERTOP Personal"
-            )
-        ],
-        [
-            InlineKeyboardButton(
-                text=_["BACK_BUTTON"], callback_data="get_playmarkup"
-            ),
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"], callback_data="close"
-            ),
+            InlineKeyboardButton(text=_["BACK_BUTTON"], callback_data="get_playmarkup"),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
     ]
     return buttons
@@ -121,9 +75,7 @@ def failed_top_markup(_):
                 text=_["BACK_BUTTON"],
                 callback_data="get_top_playlists",
             ),
-            InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"], callback_data="close"
-            ),
+            InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data="close"),
         ],
     ]
     return buttons

@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -25,9 +25,7 @@ from AasthaMusicBot.utils.stream.stream import stream
 STREAM_COMMAND = get_command("STREAM_COMMAND")
 
 
-@app.on_message(
-    filters.command(STREAM_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(STREAM_COMMAND) & filters.group & ~BANNED_USERS)
 @PlayWrapper
 async def stream_command(
     client,
@@ -54,9 +52,7 @@ async def stream_command(
                 "Please turn on Voice Chat.. Bot is not able to stream urls..",
             )
         except Exception as e:
-            return await mystic.edit_text(
-                _["general_3"].format(type(e).__name__)
-            )
+            return await mystic.edit_text(_["general_3"].format(type(e).__name__))
         await mystic.edit_text(_["str_2"])
         try:
             await stream(
@@ -72,14 +68,8 @@ async def stream_command(
             )
         except Exception as e:
             ex_type = type(e).__name__
-            err = (
-                e
-                if ex_type == "AssistantErr"
-                else _["general_3"].format(ex_type)
-            )
+            err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
             return await mystic.edit_text(err)
-        return await play_logs(
-            message, streamtype="M3u8 or Index Link"
-        )
+        return await play_logs(message, streamtype="M3u8 or Index Link")
     else:
         await mystic.edit_text(_["str_1"])

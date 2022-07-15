@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -22,16 +22,12 @@ from AasthaMusicBot.utils.formatters import alpha_to_int
 RELOAD_COMMAND = get_command("RELOAD_COMMAND")
 
 
-@app.on_message(
-    filters.command(RELOAD_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(RELOAD_COMMAND) & filters.group & ~BANNED_USERS)
 @language
 async def reload_admin_cache(client, message: Message, _):
     try:
         chat_id = message.chat.id
-        admins = await app.get_chat_members(
-            chat_id, filter="administrators"
-        )
+        admins = await app.get_chat_members(chat_id, filter="administrators")
         authusers = await get_authuser_names(chat_id)
         adminlist[chat_id] = []
         for user in admins:

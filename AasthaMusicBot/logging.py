@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -19,9 +19,7 @@ logging.basicConfig(
     format="[%(asctime)s - %(levelname)s] - %(name)s - %(message)s",
     datefmt="%d-%b-%y %H:%M:%S",
     handlers=[
-        RotatingFileHandler(
-            LOG_FILE_NAME, maxBytes=5000000, backupCount=10
-        ),
+        RotatingFileHandler(LOG_FILE_NAME, maxBytes=5000000, backupCount=10),
         logging.StreamHandler(),
     ],
 )

@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -92,10 +92,7 @@ async def alpha_to_int(user_id_alphabet: str) -> int:
 
 def time_to_seconds(time):
     stringt = str(time)
-    return sum(
-        int(x) * 60**i
-        for i, x in enumerate(reversed(stringt.split(":")))
-    )
+    return sum(int(x) * 60**i for i, x in enumerate(reversed(stringt.split(":"))))
 
 
 def seconds_to_min(seconds):

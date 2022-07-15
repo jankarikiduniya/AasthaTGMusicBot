@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -14,8 +14,7 @@ from pyrogram.types import InlineKeyboardMarkup, Message
 from config import BANNED_USERS
 from strings import get_command
 from AasthaMusicBot import app
-from AasthaMusicBot.utils.database import (get_chatmode, get_playmode,
-                                       get_playtype)
+from AasthaMusicBot.utils.database import get_chatmode, get_playmode, get_playtype
 from AasthaMusicBot.utils.decorators import language
 from AasthaMusicBot.utils.inline.settings import playmode_users_markup
 
@@ -23,9 +22,7 @@ from AasthaMusicBot.utils.inline.settings import playmode_users_markup
 PLAYMODE_COMMAND = get_command("PLAYMODE_COMMAND")
 
 
-@app.on_message(
-    filters.command(PLAYMODE_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(PLAYMODE_COMMAND) & filters.group & ~BANNED_USERS)
 @language
 async def playmode_(client, message: Message, _):
     playmode = await get_playmode(message.chat.id)

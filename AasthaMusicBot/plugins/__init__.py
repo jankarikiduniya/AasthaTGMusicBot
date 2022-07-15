@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 #
@@ -20,9 +20,7 @@ def __list_all_modules():
     all_modules = [
         (((f.replace(work_dir, "")).replace("/", "."))[:-3])
         for f in mod_paths
-        if isfile(f)
-        and f.endswith(".py")
-        and not f.endswith("__init__.py")
+        if isfile(f) and f.endswith(".py") and not f.endswith("__init__.py")
     ]
 
     return all_modules
