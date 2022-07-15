@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -12,9 +12,11 @@ import asyncio
 from typing import Union
 
 from pyrogram import Client
-from pyrogram.errors import (ChatAdminRequired,
-                             UserAlreadyParticipant,
-                             UserNotParticipant)
+from pyrogram.errors import (
+    ChatAdminRequired,
+    UserAlreadyParticipant,
+    UserNotParticipant,
+)
 from pyrogram.types import InlineKeyboardMarkup
 from pytgcalls import PyTgCalls, StreamType
 from pytgcalls.exceptions import NoActiveGroupCall
@@ -26,16 +28,20 @@ import config
 from strings import get_string
 from AasthaMusicBot import LOGGER, YouTube, app
 from AasthaMusicBot.misc import db
-from AasthaMusicBot.utils.database import (get_assistant,
-                                       get_audio_bitrate, get_lang,
-                                       get_loop, get_video_bitrate,
-                                       group_assistant, mute_off,
-                                       remove_active_chat,
-                                       remove_active_video_chat,
-                                       set_loop)
+from AasthaMusicBot.utils.database import (
+    get_assistant,
+    get_audio_bitrate,
+    get_lang,
+    get_loop,
+    get_video_bitrate,
+    group_assistant,
+    mute_off,
+    remove_active_chat,
+    remove_active_video_chat,
+    set_loop,
+)
 from AasthaMusicBot.utils.exceptions import AssistantErr
-from AasthaMusicBot.utils.inline.play import (stream_markup,
-                                          telegram_markup)
+from AasthaMusicBot.utils.inline.play import stream_markup, telegram_markup
 from AasthaMusicBot.utils.stream.autoclear import auto_clean
 from AasthaMusicBot.utils.thumbnails import gen_thumb
 
@@ -154,9 +160,7 @@ class Call(PyTgCalls):
             except ChatAdminRequired:
                 raise AssistantErr(_["call_1"])
             if get.status == "banned" or get.status == "kicked":
-                raise AssistantErr(
-                    _["call_2"].format(userbot.username, userbot.id)
-                )
+                raise AssistantErr(_["call_2"].format(userbot.username, userbot.id))
         except UserNotParticipant:
             chat = await app.get_chat(chat_id)
             if chat.username:
@@ -172,24 +176,14 @@ class Call(PyTgCalls):
                         try:
                             invitelink = chat.invite_link
                             if invitelink is None:
-                                invitelink = (
-                                    await app.export_chat_invite_link(
-                                        chat_id
-                                    )
-                                )
+                                invitelink = await app.export_chat_invite_link(chat_id)
                         except:
-                            invitelink = (
-                                await app.export_chat_invite_link(
-                                    chat_id
-                                )
-                            )
+                            invitelink = await app.export_chat_invite_link(chat_id)
                     except ChatAdminRequired:
                         raise AssistantErr(_["call_4"])
                     except Exception as e:
                         raise AssistantErr(e)
-                    m = await app.send_message(
-                        original_chat_id, _["call_5"]
-                    )
+                    m = await app.send_message(original_chat_id, _["call_5"])
                     if invitelink.startswith("https://t.me/+"):
                         invitelink = invitelink.replace(
                             "https://t.me/+", "https://t.me/joinchat/"
@@ -220,9 +214,7 @@ class Call(PyTgCalls):
                 video_parameters=video_stream_quality,
             )
             if video
-            else AudioPiped(
-                link, audio_parameters=audio_stream_quality
-            )
+            else AudioPiped(link, audio_parameters=audio_stream_quality)
         )
         try:
             await assistant.join_group_call(
@@ -274,11 +266,7 @@ class Call(PyTgCalls):
             user = check[0]["by"]
             original_chat_id = check[0]["chat_id"]
             streamtype = check[0]["streamtype"]
-            stream = (
-                AudioPiped
-                if str(streamtype) == "audio"
-                else AudioVideoPiped
-            )
+            stream = AudioPiped if str(streamtype) == "audio" else AudioVideoPiped
             videoid = check[0]["vidid"]
             if "live_" in queued:
                 n, link = await YouTube.video(videoid, True)
@@ -306,26 +294,20 @@ class Call(PyTgCalls):
                     reply_markup=InlineKeyboardMarkup(button),
                 )
             elif "vid_" in queued:
-                mystic = await app.send_message(
-                    original_chat_id, _["call_10"]
-                )
+                mystic = await app.send_message(original_chat_id, _["call_10"])
                 try:
                     file_path, direct = await YouTube.download(
                         videoid,
                         mystic,
                         videoid=True,
-                        video=True
-                        if str(streamtype) == "video"
-                        else False,
+                        video=True if str(streamtype) == "video" else False,
                     )
                 except:
                     return await mystic.edit_text(
                         _["call_9"], disable_web_page_preview=True
                     )
                 try:
-                    await client.change_stream(
-                        chat_id, stream(file_path)
-                    )
+                    await client.change_stream(chat_id, stream(file_path))
                 except Exception:
                     return await app.send_message(
                         original_chat_id,
@@ -345,9 +327,7 @@ class Call(PyTgCalls):
                 )
             elif "index_" in queued:
                 try:
-                    await client.change_stream(
-                        chat_id, AudioVideoPiped(videoid)
-                    )
+                    await client.change_stream(chat_id, AudioVideoPiped(videoid))
                 except Exception:
                     return await app.send_message(
                         original_chat_id,
@@ -361,15 +341,9 @@ class Call(PyTgCalls):
                     reply_markup=InlineKeyboardMarkup(button),
                 )
             else:
-                stream = (
-                    AudioPiped
-                    if str(streamtype) == "audio"
-                    else AudioVideoPiped
-                )
+                stream = AudioPiped if str(streamtype) == "audio" else AudioVideoPiped
                 try:
-                    await client.change_stream(
-                        chat_id, stream(queued)
-                    )
+                    await client.change_stream(chat_id, stream(queued))
                 except Exception:
                     return await app.send_message(
                         original_chat_id,
@@ -382,9 +356,7 @@ class Call(PyTgCalls):
                         photo=config.TELEGRAM_AUDIO_URL
                         if str(streamtype) == "audio"
                         else config.TELEGRAM_VIDEO_URL,
-                        caption=_["stream_3"].format(
-                            title, check[0]["dur"], user
-                        ),
+                        caption=_["stream_3"].format(title, check[0]["dur"], user),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
                 elif videoid == "soundcloud":
@@ -392,9 +364,7 @@ class Call(PyTgCalls):
                     await app.send_photo(
                         original_chat_id,
                         photo=config.SOUNCLOUD_IMG_URL,
-                        caption=_["stream_3"].format(
-                            title, check[0]["dur"], user
-                        ),
+                        caption=_["stream_3"].format(title, check[0]["dur"], user),
                         reply_markup=InlineKeyboardMarkup(button),
                     )
                 else:

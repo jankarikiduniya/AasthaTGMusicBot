@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -46,9 +46,7 @@ async def init():
     await app.start()
     for all_module in ALL_MODULES:
         importlib.import_module("AasthaMusicBot.plugins" + all_module)
-    LOGGER("AasthaMusicBot.plugins").info(
-        "Successfully Imported Modules "
-    )
+    LOGGER("AasthaMusicBot.plugins").info("Successfully Imported Modules ")
     await userbot.start()
     await Alexa.start()
     try:

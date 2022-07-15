@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -25,7 +25,8 @@ def track_markup(_, videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"], url=f"https://t.me/Shayri_Music_Lovers",
+                text=_["CLOSE_BUTTON"],
+                url=f"https://t.me/Shayri_Music_Lovers",
             )
         ],
     ]
@@ -39,9 +40,7 @@ def stream_markup(_, videoid):
                 text=_["PL_B_2"],
                 callback_data=f"add_playlist {videoid}",
             ),
-            InlineKeyboardButton(
-                text=_["PL_B_3"], url=f"https://t.me/Dr_Asad_Ali"
-            ),
+            InlineKeyboardButton(text=_["PL_B_3"], url=f"https://t.me/Dr_Asad_Ali"),
         ],
         [
             InlineKeyboardButton(
@@ -55,9 +54,7 @@ def stream_markup(_, videoid):
 def telegram_markup(_):
     buttons = [
         [
-            InlineKeyboardButton(
-                text=_["PL_B_3"], switch_inline_query_current_chat=""
-            ),
+            InlineKeyboardButton(text=_["PL_B_3"], switch_inline_query_current_chat=""),
             InlineKeyboardButton(
                 text=_["CLOSEMENU_BUTTON"], url=f"https://t.me/Alexa_Help"
             ),
@@ -80,7 +77,8 @@ def playlist_markup(_, videoid, user_id, ptype):
         ],
         [
             InlineKeyboardButton(
-                text=_["CLOSE_BUTTON"], url=f"https://t.me/Shayri_Music_Lovers",
+                text=_["CLOSE_BUTTON"],
+                url=f"https://t.me/Shayri_Music_Lovers",
             ),
         ],
     ]
@@ -95,7 +93,8 @@ def livestream_markup(_, videoid, user_id, mode):
                 callback_data=f"LiveStream {videoid}|{user_id}|{mode}",
             ),
             InlineKeyboardButton(
-                text=_["CLOSEMENU_BUTTON"], url=f"https://t.me/Shayri_Music_Lovers",
+                text=_["CLOSEMENU_BUTTON"],
+                url=f"https://t.me/Shayri_Music_Lovers",
             ),
         ],
     ]

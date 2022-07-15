@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -14,9 +14,12 @@ from pyrogram.types import Message
 from config import BANNED_USERS, adminlist
 from strings import get_command
 from AasthaMusicBot import app
-from AasthaMusicBot.utils.database import (delete_authuser, get_authuser,
-                                       get_authuser_names,
-                                       save_authuser)
+from AasthaMusicBot.utils.database import (
+    delete_authuser,
+    get_authuser,
+    get_authuser_names,
+    save_authuser,
+)
 from AasthaMusicBot.utils.decorators import AdminActual, language
 from AasthaMusicBot.utils.formatters import int_to_alpha
 
@@ -26,9 +29,7 @@ UNAUTH_COMMAND = get_command("UNAUTH_COMMAND")
 AUTHUSERS_COMMAND = get_command("AUTHUSERS_COMMAND")
 
 
-@app.on_message(
-    filters.command(AUTH_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(AUTH_COMMAND) & filters.group & ~BANNED_USERS)
 @AdminActual
 async def auth(client, message: Message, _):
     if not message.reply_to_message:
@@ -90,9 +91,7 @@ async def auth(client, message: Message, _):
         await message.reply_text(_["auth_3"])
 
 
-@app.on_message(
-    filters.command(UNAUTH_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(UNAUTH_COMMAND) & filters.group & ~BANNED_USERS)
 @AdminActual
 async def unauthusers(client, message: Message, _):
     if not message.reply_to_message:
@@ -125,9 +124,7 @@ async def unauthusers(client, message: Message, _):
         return await message.reply_text(_["auth_5"])
 
 
-@app.on_message(
-    filters.command(AUTHUSERS_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(AUTHUSERS_COMMAND) & filters.group & ~BANNED_USERS)
 @language
 async def authusers(client, message: Message, _):
     _playlist = await get_authuser_names(message.chat.id)

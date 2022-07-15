@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -14,11 +14,15 @@ from config import adminlist
 from strings import get_string
 from AasthaMusicBot import app
 from AasthaMusicBot.misc import SUDOERS
-from AasthaMusicBot.utils.database import (get_authuser_names,
-                                       get_chatmode, get_cmode,
-                                       get_lang, is_active_chat,
-                                       is_commanddelete_on,
-                                       is_nonadmin_chat)
+from AasthaMusicBot.utils.database import (
+    get_authuser_names,
+    get_chatmode,
+    get_cmode,
+    get_lang,
+    is_active_chat,
+    is_commanddelete_on,
+    is_nonadmin_chat,
+)
 
 from ..formatters import int_to_alpha
 
@@ -46,9 +50,7 @@ def AdminRightsCheck(mystic):
                     ]
                 ]
             )
-            return await message.reply_text(
-                _["general_4"], reply_markup=upl
-            )
+            return await message.reply_text(_["general_4"], reply_markup=upl)
         chatmode = await get_chatmode(message.chat.id)
         if chatmode == "Group":
             chat_id = message.chat.id
@@ -97,9 +99,7 @@ def AdminActual(mystic):
                     ]
                 ]
             )
-            return await message.reply_text(
-                _["general_4"], reply_markup=upl
-            )
+            return await message.reply_text(_["general_4"], reply_markup=upl)
         if message.from_user.id not in SUDOERS:
             try:
                 member = await app.get_chat_member(
@@ -124,9 +124,7 @@ def ActualAdminCB(mystic):
             _ = get_string("en")
         if CallbackQuery.message.chat.type == "private":
             return await mystic(client, CallbackQuery, _)
-        is_non_admin = await is_nonadmin_chat(
-            CallbackQuery.message.chat.id
-        )
+        is_non_admin = await is_nonadmin_chat(CallbackQuery.message.chat.id)
         if not is_non_admin:
             try:
                 a = await app.get_chat_member(
@@ -134,17 +132,11 @@ def ActualAdminCB(mystic):
                     CallbackQuery.from_user.id,
                 )
             except:
-                return await CallbackQuery.answer(
-                    _["general_5"], show_alert=True
-                )
+                return await CallbackQuery.answer(_["general_5"], show_alert=True)
             if not a.can_manage_voice_chats:
                 if CallbackQuery.from_user.id not in SUDOERS:
-                    token = await int_to_alpha(
-                        CallbackQuery.from_user.id
-                    )
-                    _check = await get_authuser_names(
-                        CallbackQuery.from_user.id
-                    )
+                    token = await int_to_alpha(CallbackQuery.from_user.id)
+                    _check = await get_authuser_names(CallbackQuery.from_user.id)
                     if token not in _check:
                         try:
                             return await CallbackQuery.answer(

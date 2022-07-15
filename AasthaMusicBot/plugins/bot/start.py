@@ -4,13 +4,12 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
 from pyrogram import filters
-from pyrogram.types import (InlineKeyboardButton,
-                            InlineKeyboardMarkup, Message)
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from youtubesearchpython import VideosSearch
 
 import config
@@ -21,20 +20,21 @@ from AasthaMusicBot import Telegram, YouTube, app
 from AasthaMusicBot.misc import SUDOERS
 from AasthaMusicBot.plugins.play.playlist import del_plist_msg
 from AasthaMusicBot.plugins.sudo.sudoers import sudoers_list
-from AasthaMusicBot.utils.database import (add_served_chat,
-                                       add_served_user, get_assistant,
-                                       get_lang, get_userss,
-                                       is_on_off,
-                                       is_served_private_chat)
+from AasthaMusicBot.utils.database import (
+    add_served_chat,
+    add_served_user,
+    get_assistant,
+    get_lang,
+    get_userss,
+    is_on_off,
+    is_served_private_chat,
+)
 from AasthaMusicBot.utils.decorators.language import language
-from AasthaMusicBot.utils.inline import (help_pannel, private_panel,
-                                     start_pannel)
+from AasthaMusicBot.utils.inline import help_pannel, private_panel, start_pannel
 
 
 @app.on_message(
-    filters.command(get_command("START_COMMAND"))
-    & filters.private
-    & ~BANNED_USERS
+    filters.command(get_command("START_COMMAND")) & filters.private & ~BANNED_USERS
 )
 @language
 async def start_comm(client, message: Message, _):
@@ -43,15 +43,11 @@ async def start_comm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = help_pannel(_)
-            return await message.reply_text(
-                _["help_1"], reply_markup=keyboard
-            )
+            return await message.reply_text(_["help_1"], reply_markup=keyboard)
         if name[0:4] == "song":
             return await message.reply_text(_["song_2"])
         if name[0:3] == "sta":
-            m = await message.reply_text(
-                "🔎 Fetching your personal stats.!"
-            )
+            m = await message.reply_text("🔎 Fetching your personal stats.!")
             stats = await get_userss(message.from_user.id)
             tot = len(stats)
             if tot > 10:
@@ -110,9 +106,7 @@ async def start_comm(client, message: Message, _):
             if lyrics:
                 return await Telegram.send_split_text(message, lyrics)
             else:
-                return await message.reply_text(
-                    "Failed to get lyrics."
-                )
+                return await message.reply_text("Failed to get lyrics.")
         if name[0:3] == "del":
             await del_plist_msg(client=client, message=message, _=_)
         if name[0:3] == "inf":
@@ -124,9 +118,7 @@ async def start_comm(client, message: Message, _):
                 title = result["title"]
                 duration = result["duration"]
                 views = result["viewCount"]["short"]
-                thumbnail = result["thumbnails"][0]["url"].split("?")[
-                    0
-                ]
+                thumbnail = result["thumbnails"][0]["url"].split("?")[0]
                 channellink = result["channel"]["link"]
                 channel = result["channel"]["name"]
                 link = result["link"]
@@ -147,12 +139,8 @@ async def start_comm(client, message: Message, _):
             key = InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(
-                            text="🎥 Watch ", url=f"{link}"
-                        ),
-                        InlineKeyboardButton(
-                            text="🔄 Close", callback_data="close"
-                        ),
+                        InlineKeyboardButton(text="🎥 Watch ", url=f"{link}"),
+                        InlineKeyboardButton(text="🔄 Close", callback_data="close"),
                     ],
                 ]
             )
@@ -182,9 +170,7 @@ async def start_comm(client, message: Message, _):
             try:
                 await message.reply_photo(
                     photo=config.START_IMG_URL,
-                    caption=_["start_2"].format(
-                        config.MUSIC_BOT_NAME
-                    ),
+                    caption=_["start_2"].format(config.MUSIC_BOT_NAME),
                     reply_markup=InlineKeyboardMarkup(out),
                 )
             except:
@@ -207,17 +193,13 @@ async def start_comm(client, message: Message, _):
 
 
 @app.on_message(
-    filters.command(get_command("START_COMMAND"))
-    & filters.group
-    & ~BANNED_USERS
+    filters.command(get_command("START_COMMAND")) & filters.group & ~BANNED_USERS
 )
 @language
 async def testbot(client, message: Message, _):
     out = start_pannel(_)
     return await message.reply_text(
-        _["start_1"].format(
-            message.chat.title, config.MUSIC_BOT_NAME
-        ),
+        _["start_1"].format(message.chat.title, config.MUSIC_BOT_NAME),
         reply_markup=InlineKeyboardMarkup(out),
     )
 
@@ -257,15 +239,11 @@ async def welcome(client, message: Message):
                 )
             if member.id in config.OWNER_ID:
                 return await message.reply_text(
-                    _["start_4"].format(
-                        config.MUSIC_BOT_NAME, member.mention
-                    )
+                    _["start_4"].format(config.MUSIC_BOT_NAME, member.mention)
                 )
             if member.id in SUDOERS:
                 return await message.reply_text(
-                    _["start_5"].format(
-                        config.MUSIC_BOT_NAME, member.mention
-                    )
+                    _["start_5"].format(config.MUSIC_BOT_NAME, member.mention)
                 )
             return
         except:

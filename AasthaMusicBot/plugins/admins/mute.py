@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -22,9 +22,7 @@ from AasthaMusicBot.utils.decorators import AdminRightsCheck
 MUTE_COMMAND = get_command("MUTE_COMMAND")
 
 
-@app.on_message(
-    filters.command(MUTE_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(MUTE_COMMAND) & filters.group & ~BANNED_USERS)
 @AdminRightsCheck
 async def mute_admin(cli, message: Message, _, chat_id):
     if not len(message.command) == 1:
@@ -33,6 +31,4 @@ async def mute_admin(cli, message: Message, _, chat_id):
         return await message.reply_text(_["admin_5"])
     await mute_on(chat_id)
     await Alexa.mute_stream(chat_id)
-    await message.reply_text(
-        _["admin_6"].format(message.from_user.mention)
-    )
+    await message.reply_text(_["admin_6"].format(message.from_user.mention))

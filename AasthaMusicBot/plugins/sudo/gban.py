@@ -5,9 +5,6 @@
 # Harshit Sharma
 
 
-
-
-
 import asyncio
 import os
 import shutil
@@ -21,17 +18,27 @@ from pyrogram.types import Message
 from AasthaMusicBot import app
 from AasthaMusicBot.misc import SUDOERS
 from config import OWNER_ID, MUSIC_BOT_NAME, OWNER_ID
-from AasthaMusicBot.utils.database import (add_gban_user, add_off, add_on, add_sudo,
-                            get_active_chats, get_served_chats, get_sudoers,
-                            is_gbanned_user, remove_active_chat,
-                            remove_gban_user, remove_served_chat, remove_sudo,
-                            set_video_limit)
+from AasthaMusicBot.utils.database import (
+    add_gban_user,
+    add_off,
+    add_on,
+    add_sudo,
+    get_active_chats,
+    get_served_chats,
+    get_sudoers,
+    is_gbanned_user,
+    remove_active_chat,
+    remove_gban_user,
+    remove_served_chat,
+    remove_sudo,
+    set_video_limit,
+)
 
 
 ## Gban Module
 
 
-@app.on_message(filters.command("gban")  & SUDOERS)
+@app.on_message(filters.command("gban") & SUDOERS)
 async def ban_globally(_, message):
     if not message.reply_to_message:
         if len(message.command) < 2:
@@ -43,9 +50,7 @@ async def ban_globally(_, message):
         user = await app.get_users(user)
         from_user = message.from_user
         if user.id == from_user.id:
-            return await message.reply_text(
-                "You want to gban yourself? How Fool!"
-            )
+            return await message.reply_text("You want to gban yourself? How Fool!")
         elif user.id in SUDOERS:
             await message.reply_text("You want to block a sudo user? KIDXZ")
         else:
@@ -134,14 +139,12 @@ __**New Global Ban on {MUSIC_BOT_NAME}**__
             )
             return
 
-          
+
 @app.on_message(filters.command("ungban") & SUDOERS)
 async def unban_globally(_, message):
     if not message.reply_to_message:
         if len(message.command) != 2:
-            await message.reply_text(
-                "**Usage:**\n/ungban [USERNAME | USER_ID]"
-            )
+            await message.reply_text("**Usage:**\n/ungban [USERNAME | USER_ID]")
             return
         user = message.text.split(None, 1)[1]
         if "@" in user:

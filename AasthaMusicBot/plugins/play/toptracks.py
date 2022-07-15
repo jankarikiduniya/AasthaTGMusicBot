@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -13,19 +13,23 @@ from pyrogram.types import InlineKeyboardMarkup
 
 from config import BANNED_USERS
 from AasthaMusicBot import app
-from AasthaMusicBot.utils.database import (get_chatmode, get_cmode,
-                                       get_global_tops,
-                                       get_particulars, get_userss)
+from AasthaMusicBot.utils.database import (
+    get_chatmode,
+    get_cmode,
+    get_global_tops,
+    get_particulars,
+    get_userss,
+)
 from AasthaMusicBot.utils.decorators.language import languageCB
-from AasthaMusicBot.utils.inline.playlist import (botplaylist_markup,
-                                              failed_top_markup,
-                                              top_play_markup)
+from AasthaMusicBot.utils.inline.playlist import (
+    botplaylist_markup,
+    failed_top_markup,
+    top_play_markup,
+)
 from AasthaMusicBot.utils.stream.stream import stream
 
 
-@app.on_callback_query(
-    filters.regex("get_playmarkup") & ~BANNED_USERS
-)
+@app.on_callback_query(filters.regex("get_playmarkup") & ~BANNED_USERS)
 @languageCB
 async def get_play_markup(client, CallbackQuery, _):
     try:
@@ -38,9 +42,7 @@ async def get_play_markup(client, CallbackQuery, _):
     )
 
 
-@app.on_callback_query(
-    filters.regex("get_top_playlists") & ~BANNED_USERS
-)
+@app.on_callback_query(filters.regex("get_top_playlists") & ~BANNED_USERS)
 @languageCB
 async def get_topz_playlists(client, CallbackQuery, _):
     try:
@@ -67,9 +69,7 @@ async def server_to_play(client, CallbackQuery, _):
             channel = chat.title
         except:
             try:
-                return await CallbackQuery.answer(
-                    _["cplay_4"], show_alert=True
-                )
+                return await CallbackQuery.answer(_["cplay_4"], show_alert=True)
             except:
                 return
     user_name = CallbackQuery.from_user.first_name
@@ -96,9 +96,7 @@ async def server_to_play(client, CallbackQuery, _):
     elif what == "Personal":
         stats = await get_userss(CallbackQuery.from_user.id)
     if not stats:
-        return await mystic.edit(
-            _["tracks_2"].format(what), reply_markup=upl
-        )
+        return await mystic.edit(_["tracks_2"].format(what), reply_markup=upl)
     for i in stats:
         top_list = stats[i]["spot"]
         results[str(i)] = top_list
@@ -110,9 +108,7 @@ async def server_to_play(client, CallbackQuery, _):
             )
         )
     if not results:
-        return await mystic.edit(
-            _["tracks_2"].format(what), reply_markup=upl
-        )
+        return await mystic.edit(_["tracks_2"].format(what), reply_markup=upl)
     details = []
     for vidid, count in list_arranged.items():
         if vidid == "telegram":
@@ -122,9 +118,7 @@ async def server_to_play(client, CallbackQuery, _):
         limit += 1
         details.append(vidid)
     if not details:
-        return await mystic.edit(
-            _["tracks_2"].format(what), reply_markup=upl
-        )
+        return await mystic.edit(_["tracks_2"].format(what), reply_markup=upl)
     try:
         await stream(
             _,
@@ -139,10 +133,6 @@ async def server_to_play(client, CallbackQuery, _):
         )
     except Exception as e:
         ex_type = type(e).__name__
-        err = (
-            e
-            if ex_type == "AssistantErr"
-            else _["general_3"].format(ex_type)
-        )
+        err = e if ex_type == "AssistantErr" else _["general_3"].format(ex_type)
         return await mystic.edit_text(err)
     return await mystic.delete()

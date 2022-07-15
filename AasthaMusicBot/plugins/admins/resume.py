@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -22,9 +22,7 @@ from AasthaMusicBot.utils.decorators import AdminRightsCheck
 RESUME_COMMAND = get_command("RESUME_COMMAND")
 
 
-@app.on_message(
-    filters.command(RESUME_COMMAND) & filters.group & ~BANNED_USERS
-)
+@app.on_message(filters.command(RESUME_COMMAND) & filters.group & ~BANNED_USERS)
 @AdminRightsCheck
 async def resume_com(cli, message: Message, _, chat_id):
     if not len(message.command) == 1:
@@ -33,6 +31,4 @@ async def resume_com(cli, message: Message, _, chat_id):
         return await message.reply_text(_["admin_3"])
     await music_on(chat_id)
     await Alexa.resume_stream(chat_id)
-    await message.reply_text(
-        _["admin_4"].format(message.from_user.mention)
-    )
+    await message.reply_text(_["admin_4"].format(message.from_user.mention))

@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -15,9 +15,11 @@ from config import BANNED_USERS
 from strings import get_command
 from AasthaMusicBot import app
 from AasthaMusicBot.misc import SUDOERS
-from AasthaMusicBot.utils.database import (blacklist_chat,
-                                       blacklisted_chats,
-                                       whitelist_chat)
+from AasthaMusicBot.utils.database import (
+    blacklist_chat,
+    blacklisted_chats,
+    whitelist_chat,
+)
 from AasthaMusicBot.utils.decorators.language import language
 
 # Commands
@@ -55,9 +57,7 @@ async def white_funciton(client, message: Message, _):
     await message.reply_text("Something wrong happened.")
 
 
-@app.on_message(
-    filters.command(BLACKLISTEDCHAT_COMMAND) & ~BANNED_USERS
-)
+@app.on_message(filters.command(BLACKLISTEDCHAT_COMMAND) & ~BANNED_USERS)
 @language
 async def all_chats(client, message: Message, _):
     text = _["black_7"]

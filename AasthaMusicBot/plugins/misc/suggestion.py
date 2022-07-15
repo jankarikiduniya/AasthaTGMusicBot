@@ -4,7 +4,7 @@
 
 # Kanged By © @Dr_Asad_Ali
 # Rocks © @Shayri_Music_Lovers
-# Owner Asad Ali 
+# Owner Asad Ali
 # Harshit Sharma
 # All rights reserved. Yukki
 
@@ -205,9 +205,7 @@ async def dont_do_this():
                             ):
                                 if not await is_active_chat(chat_id):
                                     try:
-                                        await userbot.one.leave_chat(
-                                            chat_id
-                                        )
+                                        await userbot.one.leave_chat(chat_id)
                                     except:
                                         continue
                 if config.STRING2:
@@ -227,9 +225,7 @@ async def dont_do_this():
                             ):
                                 if not await is_active_chat(chat_id):
                                     try:
-                                        await userbot.two.leave_chat(
-                                            chat_id
-                                        )
+                                        await userbot.two.leave_chat(chat_id)
                                     except:
                                         continue
                 if config.STRING3:
@@ -249,9 +245,7 @@ async def dont_do_this():
                             ):
                                 if not await is_active_chat(chat_id):
                                     try:
-                                        await userbot.three.leave_chat(
-                                            chat_id
-                                        )
+                                        await userbot.three.leave_chat(chat_id)
                                     except:
                                         continue
                 if config.STRING4:
@@ -271,9 +265,7 @@ async def dont_do_this():
                             ):
                                 if not await is_active_chat(chat_id):
                                     try:
-                                        await userbot.four.leave_chat(
-                                            chat_id
-                                        )
+                                        await userbot.four.leave_chat(chat_id)
                                     except:
                                         continue
                 if config.STRING5:
@@ -292,9 +284,7 @@ async def dont_do_this():
                             ):
                                 if not await is_active_chat(chat_id):
                                     try:
-                                        await userbot.five.leave_chat(
-                                            chat_id
-                                        )
+                                        await userbot.five.leave_chat(chat_id)
                                     except:
                                         continue
         except:
@@ -326,18 +316,14 @@ async def dont_do_this():
                     suggestor[x] = string["value"]
                     if string["markup"] is None:
                         try:
-                            sent = await app.send_message(
-                                x, string["msg"]
-                            )
+                            sent = await app.send_message(x, string["msg"])
                             if x not in clean:
                                 clean[x] = []
                             time_now = datetime.now()
                             put = {
                                 "msg_id": sent.message_id,
                                 "timer_after": time_now
-                                + timedelta(
-                                    minutes=config.CLEANMODE_DELETE_MINS
-                                ),
+                                + timedelta(minutes=config.CLEANMODE_DELETE_MINS),
                             }
                             clean[x].append(put)
                             send_to += 1
@@ -364,9 +350,7 @@ async def dont_do_this():
                             put = {
                                 "msg_id": sent.message_id,
                                 "timer_after": time_now
-                                + timedelta(
-                                    minutes=config.CLEANMODE_DELETE_MINS
-                                ),
+                                + timedelta(minutes=config.CLEANMODE_DELETE_MINS),
                             }
                             clean[x].append(put)
                             send_to += 1
